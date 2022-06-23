@@ -5,7 +5,8 @@
 :root {
     --verde: #74fb52;
     --verdeesc: #084101;
-    --preto: #101010;
+    --preto1: #000;
+    --preto2: #101010;
     --pretofosco: #202020;
     --cinzaesc: #373737;
     --cinza: #696969;
@@ -35,7 +36,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: var(--preto);
+    background: var(--preto1);
 }
 
 .container {
@@ -53,14 +54,14 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 400px;
+    height: 300px;
     width: 200px;
     margin: 30px;
-    border-top: 1px solid var(--branco);
-    border-left: 1px solid var(--branco);
+    border-top: 1px solid var(--cinza);
+    border-left: 1px solid var(--cinza);
     border-radius: 20px;
     box-shadow: 20px 20px 50px rgba(0,0,0,0.2);
-    background: var(--cinza);
+    background: var(--preto1);
     backdrop-filter: blur(2px);
     overflow: hidden;
 }
@@ -78,6 +79,15 @@ body {
     opacity: 1;
 }
 
+.container .card .content .js{
+    position: absolute;
+    color: #ffe100;
+    top: -5%;
+    right: 20px;
+    font-size: 1.8em;
+}
+
+/*
 .container .card .content h2 {
     position: absolute;
     top: -70px;
@@ -87,17 +97,20 @@ body {
     pointer-events: none;
     opacity: 30%;
 }
+*/
 
 .container .card .content h3 {
     font-size: 1.8em;
     color: var(--branco);
     z-index: 1;
+    font-family: var(--font-principal);
 }
 
 .container .card .content p {
     font-size: 1em;
     font-weight: 300;
     color: var(--branco);
+    font-family: var(--font-secundaria);
 }
 
 .container .card .content a {
@@ -111,4 +124,11 @@ body {
     border-top: 1px solid var(--cinza);
     border-left: 1px solid var(--cinza);
     box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    font-family: var(--font-terciaria);
+}
+
+.container .card .content a:hover {
+    background-color: #084101;
+    color:var(--branco);
+    border: 1px solid var(--branco);
 }

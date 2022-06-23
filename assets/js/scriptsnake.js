@@ -1,25 +1,25 @@
 window.onload = function () {
-    var tela = document.getElementById('tela');   // criando a tela
-    var ctx = tela.getContext("2d");      
-    var velx = vely = 0;              // velocidade 
-    var inix = iniy = 10;             // posição inicial da cobra
-    var macax = macay = 20;           // posição inicial da maçã
+    var tela = document.getElementById('tela');   
+    var ctx = tela.getContext("2d");    
+    var velx = vely = 0;               
+    var inix = iniy = 10;             
+    var macax = macay = 20;           
     var tamp = 20;
-    var qtdp = 28;                    // tamanho do quadrado 
-    var rastro = [];                  // Rastro da cobra
+    var qtdp = 28;                     
+    var rastro = [];                  
     var pont = 0;
-    const vel = 1;                    // velocidade   
+    const vel = 1;                       
 
     document.addEventListener("keydown", keyPush); 
-    setInterval(jogo, 1000/15);       // Intervalo no qual a função será chamada
-    ras = 3;                          // Tamanho inicial da cobra
+    setInterval(jogo, 1000/15);       
+    ras = 3;                          
 
     function jogo() {
-        inix += velx;                 // atualizado posição da cabela da cobra
-        iniy += vely                  // a cada vez que  a função é chamada.
+        inix += velx;                 
+        iniy += vely                  
 
-        if (inix < 0) {               // quando a cobra atingir a margem, ela
-            inix = qtdp -1;           // será enviada para o outro lado da tela. 
+        if (inix < 0) {               
+            inix = qtdp -1;            
         }
         if (inix > qtdp -1) {
             inix = 0;
@@ -31,14 +31,13 @@ window.onload = function () {
             iniy = 0;
         }
 
-
-        ctx.fillStyle = "gray";
+        ctx.fillStyle = "#101010";
         ctx.fillRect(0, 0, tela.width, tela.height);
         
         ctx.fillStyle = "#af2b2b";
         ctx.fillRect(macax*tamp, macay*tamp, tamp, tamp);
 
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "#74fb52";
         for(var i=0; i<rastro.length; i++) {
             ctx.fillRect(rastro[i].x*tamp, rastro[i].y*tamp, tamp-1, tamp-1);
 
@@ -49,37 +48,37 @@ window.onload = function () {
             }
         }
 
-        rastro.push({x:inix, y:iniy})     // Tirando um elemento da cobra sempre que o
-        while(rastro.length > ras) {      // rastro for maior que o tamanho real da cobra.
+        rastro.push({x:inix, y:iniy})     
+        while(rastro.length > ras) {      
             rastro.shift();
         }
 
         if(macax == inix && macay == iniy) {
-            ras++;                                    // Rastro aumenta 1, se a cabeça estiver na 
-            macax = Math.floor(Math.random()*qtdp);   // mesma posição que a maçã.
-            macay = Math.floor(Math.random()*qtdp);   // Reposicionando a nova maçã
+            ras++;                                     
+            macax = Math.floor(Math.random()*qtdp);   
+            macay = Math.floor(Math.random()*qtdp);   
             pont++;
         }
     }
 
     function keyPush(event) {
         switch(event.keyCode) {
-            case 37:             // 37 -> esquerda
+            case 37:             
                 velx =- vel;
                 vely = 0
                 break;
 
-            case 38:             // 38 -> cima
+            case 38:             
                 velx = 0;
                 vely = -vel;
                 break;
 
-            case 39:             // 39 -> direita  
+            case 39:               
                 velx = vel;
                 vely = 0;
                 break;
 
-            case 40:             // 40 -> baixo
+            case 40:             
                 velx = 0;
                 vely = vel;
                 break;

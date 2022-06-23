@@ -2,10 +2,16 @@
 
 :root {
     --verde: #74fb52;
-    --preto: #000;
-    --branco: #FFF;
+    --verdeesc: #084101;
+    --preto1: #000;
+    --preto2: #101010;
+    --pretofosco: #202020;
+    --cinzaesc: #373737;
     --cinza: #696969;
+    --branco: #FFF;
     --font-principal: 'Anek Bangla', sans-serif;
+    --font-secundaria: 'Share Tech Mono', monospace;
+    --font-terciaria: 'Poppins', sans-serif;
     --font1: 1rem;
     --font2: 1.2rem;
     --font4: 1.4rem;
@@ -15,14 +21,17 @@
     --font-peso6: 600;
 }
 
+
 * {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    text-decoration: none;
+    list-style: none;
 }
 
 body {
-    background: linear-gradient(90deg, var(--preto),var(--cinza), var(--preto));
+    background: linear-gradient(90deg, var(--preto1),var(--preto2), var(--preto1));
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -55,4 +64,31 @@ body {
     display: flex;
     justify-content: center;
     margin: 2%;
+}
+
+#tela {
+    background: var(--verde);
+}
+
+
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--preto2);
+    position: fixed;
+    text-align: center;
+    font-size: var(--font2);
+    font-family: var(--font-secundaria);
+}
+
+footer a {
+    color: var(--preto) !important;
+}
+
+footer span {
+    color: var(--verde);
+}
+
+footer a:hover {
+    color: var(--branco) !important;
 }

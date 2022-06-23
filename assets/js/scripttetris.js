@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnIniciarPausar = document.querySelector('#btnIniciarPausar')
     const width = 10
     const cores = [
-        'black',
         'orange',
         'green',
         'blue',
